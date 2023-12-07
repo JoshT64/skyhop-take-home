@@ -22,13 +22,17 @@ function App() {
         <div id='rightRow' className='pr-8  text-start place-self-auto'>
           <Separator>
             <Text>Split schedule using social distancing?</Text>
-            <RadioSelect />
+            <RadioSelect options={['Yes', 'No']} defaultValue='yes' />
           </Separator>
           <Separator>
             <Text className='pt-4 pb-2'>Location Checking:</Text>
             <p className='text-green-600 font-normal'>All available!</p>
           </Separator>
           <Text className='pt-4'>Client:</Text>
+          <RadioSelect
+            options={['Single', 'Multiple']}
+            defaultValue='multiple'
+          />
         </div>
       </Container>
     </>
