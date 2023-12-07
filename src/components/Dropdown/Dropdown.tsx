@@ -21,8 +21,8 @@ import {
 // select from list of file imports
 const importNames = [
   {
-    value: 'next.js',
-    label: 'Next.js',
+    value: 'sampleimage.jpg',
+    label: 'SampleImage.jpg',
   },
 ];
 
@@ -37,7 +37,7 @@ export const Dropdown = () => {
           variant='outline'
           role='combobox'
           aria-expanded={open}
-          className='w-[650px] text-sky-950 justify-between'
+          className='w-[650px] text-sky-900 font-semibold justify-between'
         >
           {value
             ? importNames.find((importName) => importName.value === value)
