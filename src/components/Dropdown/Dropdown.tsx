@@ -31,47 +31,49 @@ export const Dropdown = () => {
   const [value, setValue] = React.useState('');
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant='outline'
-          role='combobox'
-          aria-expanded={open}
-          className='w-[650px] text-sky-900 font-semibold justify-between'
-        >
-          {value
-            ? importNames.find((importName) => importName.value === value)
-                ?.label
-            : 'Select Import Name:'}
-          <ChevronDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className='w-[650px] p-0'>
-        <Command>
-          <CommandInput placeholder='Select Import...' />
-          <CommandEmpty>No framework found.</CommandEmpty>
-          <CommandGroup>
-            {importNames.map((importName) => (
-              <CommandItem
-                key={importName.value}
-                value={importName.value}
-                onSelect={(currentValue) => {
-                  setValue(currentValue === value ? '' : currentValue);
-                  setOpen(false);
-                }}
-              >
-                <Check
-                  className={cn(
-                    'mr-2 h-4 w-4',
-                    value === importName.value ? 'opacity-100' : 'opacity-0'
-                  )}
-                />
-                {importName.label}
-              </CommandItem>
-            ))}
-          </CommandGroup>
-        </Command>
-      </PopoverContent>
-    </Popover>
+    <div className='border-b w-[400px] border-opacity-40 border-gray-400 pb-4'>
+      <Popover open={open} onOpenChange={setOpen}>
+        <PopoverTrigger asChild>
+          <Button
+            variant='outline'
+            role='combobox'
+            aria-expanded={open}
+            className='w-[650px] text-sky-900 font-semibold text-sm justify-between'
+          >
+            {value
+              ? importNames.find((importName) => importName.value === value)
+                  ?.label
+              : 'Select Import Name:'}
+            <ChevronDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className='w-[650px] p-0'>
+          <Command>
+            <CommandInput placeholder='Select Import...' />
+            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandGroup>
+              {importNames.map((importName) => (
+                <CommandItem
+                  key={importName.value}
+                  value={importName.value}
+                  onSelect={(currentValue) => {
+                    setValue(currentValue === value ? '' : currentValue);
+                    setOpen(false);
+                  }}
+                >
+                  <Check
+                    className={cn(
+                      'mr-2 h-4 w-4',
+                      value === importName.value ? 'opacity-100' : 'opacity-0'
+                    )}
+                  />
+                  {importName.label}
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </Command>
+        </PopoverContent>
+      </Popover>
+    </div>
   );
 };
