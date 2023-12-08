@@ -1,6 +1,7 @@
 import {
   Container,
   Dropdown,
+  FileUpload,
   Hero,
   RadioSelect,
   Separator,
@@ -11,13 +12,15 @@ import './styles/App.css';
 function App() {
   return (
     <>
+      {/* <CloseButton /> */}
       <Hero />
       <Container>
         <div id='leftRow' className='text-start'>
           <Dropdown />
-          <Text className='pt-4'>
+          <Text className='pt-4 pb-2'>
             Select a manifest that you'd like to import
           </Text>
+          <FileUpload />
         </div>
         <div id='rightRow' className='pr-8  text-start place-self-auto'>
           <Separator>

@@ -4,3 +4,4 @@ export * from './Text';
 export * from './Hero';
 export * from './Container';
 export * from './Separator';
+export * from './FileUpload';

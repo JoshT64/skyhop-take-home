@@ -9,7 +9,6 @@ interface RadioSelectProps {
 export const RadioSelect = ({ options, defaultValue }: RadioSelectProps) => {
   const optionsToRender = () => {
     return options?.map((option) => {
-      console.log(option);
       return (
         <div key={option} className='flex items-center space-x-2'>
           <RadioGroupItem value={option.toLowerCase()} id='r1' />
