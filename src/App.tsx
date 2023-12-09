@@ -1,7 +1,6 @@
 import {
   Container,
   Dropdown,
-  FileLoader,
   FileUpload,
   Hero,
   RadioSelect,
@@ -9,16 +8,8 @@ import {
   Text,
 } from './components';
 import './styles/App.css';
-import { useState } from 'react';
 
 function App() {
-  // If my application was larger scale I would use some sort of
-  // state management library instead of prop drilling up for this file name
-  const [file, setFile] = useState({ name: '', size: 0 });
-  const getFileToDisplay = (file: File) => {
-    setFile(file);
-  };
-
   return (
     <>
       {/* <CloseButton /> */}
@@ -29,9 +20,7 @@ function App() {
           <Text className='pt-4 pb-2'>
             Select a manifest that you'd like to import
           </Text>
-          <FileUpload fileToDisplay={getFileToDisplay} />
-          <Separator />
-          {file.name && <FileLoader file={file} />}
+          <FileUpload />
         </div>
         <div id='rightRow' className='pr-8  text-start place-self-auto'>
           <Separator>

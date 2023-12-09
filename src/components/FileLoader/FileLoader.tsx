@@ -30,13 +30,20 @@ export const FileLoader = ({ file }: FileLoaderProps) => {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
   };
 
+  useEffect(() => {
+    setProgress(0); // Reset progress when uploading new file
+  }, [file.name]);
+
   return (
     <div className='flex  pl-4 pt-4'>
       <img src='/file-load-icon.png' alt='file icon' />
       <span className='pl-4'>
         <Text className='flex justify-between font-light text-gray-400'>
-          {file.name}{' '}
-          <Text className='font-mono font-light text-xs text-black'>
+          {file.name.length < 70
+            ? file.name
+            : `${file.name.substring(0, 70)}...`}
+          {''}
+          <Text className='font-mono font-light text-xs tracking-tighter text-black'>
             {formatBytes(file.size)}
           </Text>{' '}
         </Text>
