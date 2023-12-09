@@ -50,7 +50,7 @@ export const Dropdown = () => {
         <PopoverContent className='w-[650px] p-0'>
           <Command>
             <CommandInput placeholder='Select Import...' />
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>No file found.</CommandEmpty>
             <CommandGroup>
               {importNames.map((importName) => (
                 <CommandItem
