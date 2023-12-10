@@ -1,21 +1,32 @@
 import { Text } from '..';
 import { Button } from '../ui/button';
+import { useDrag } from './useDrag';
 
 interface DragAndDropProps {
   onFileNameChange: (fileName: File) => void;
 }
 
 export const DragAndDrop = ({ onFileNameChange }: DragAndDropProps) => {
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event?.target?.files?.[0];
-    if (file) {
-      onFileNameChange(file);
-    }
-  };
+  const { handleDragLeave, handleDragOver, handleFileChange } = useDrag({
+    onFileNameChange,
+  });
 
   return (
     <>
       <div
+        onDrop={(event: React.DragEvent<HTMLDivElement>) => {
+          event.preventDefault();
+          const file = event.dataTransfer.files[0];
+          onFileNameChange(file);
+          event.currentTarget.style.backgroundColor = '';
+        }}
+        onDragOver={(event: React.DragEvent<HTMLDivElement>) =>
+          handleDragOver(event)
+        }
+        onDragLeave={(event: React.DragEvent<HTMLDivElement>) => {
+          handleDragLeave(event);
+          event.currentTarget.style.backgroundColor = '';
+        }}
         onClick={() => {
           // should disable this onclick while file is being uploaded
           const input = document.createElement('input');

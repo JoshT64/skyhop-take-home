@@ -7,7 +7,7 @@ interface TextProps {
 }
 
 export const Text = ({ children, className }: TextProps) => {
-  const classes = cn(`text-sky-900 font-semibold text-sm ${className}`);
+  const classes = cn(`text-sky-900 font-semibold text-sm pt-4 ${className}`);
 
   return <p className={classes}>{children}</p>;
 };

@@ -5,8 +5,11 @@ import {
   Hero,
   RadioSelect,
   Separator,
+  StatusText,
   Text,
 } from './components';
+import { Label } from './components/ui/label';
+import { Switch } from './components/ui/switch';
 import './styles/App.css';
 
 function App() {
@@ -17,21 +20,38 @@ function App() {
       <Container>
         <div id='leftRow' className='text-start'>
           <Dropdown />
-          <Text className='pt-4 pb-2'>
+          <Text className='pb-2'>
             Select a manifest that you'd like to import
           </Text>
           <FileUpload />
+          <Separator className='w-[400px]' />
+          <Separator className='w-[400px]'>
+            <StatusText text={'Elapse Data Checking:'} isAvailable />
+          </Separator>
+          <Text>Tolerance Window</Text>
+          <div className='flex items-center pt-2'>
+            <Switch className='mr-1'></Switch>
+            <Label className='flex items-center'>
+              <p className='pr-2'>Toggle ON </p>
+              <p>|</p>
+              <span className='flex items-center pl-2'>
+                <img className='pr-1' src='/tolerance-window.png' />
+                Select Tolerance Level
+              </span>{' '}
+            </Label>
+          </div>
         </div>
-        <div id='rightRow' className='pr-8  text-start place-self-auto'>
+        <div id='rightRow' className='pr-8 text-start place-self-auto'>
           <Separator>
-            <Text>Split schedule using social distancing?</Text>
+            <Text className='pt-0'>
+              Split schedule using social distancing?
+            </Text>
             <RadioSelect options={['Yes', 'No']} defaultValue='yes' />
           </Separator>
           <Separator>
-            <Text className='pt-4 pb-2'>Location Checking:</Text>
-            <p className='text-green-600 font-normal'>All available!</p>
+            <StatusText text={'Location Checking:'} isAvailable />
           </Separator>
-          <Text className='pt-4'>Client:</Text>
+          <Text className=''>Client:</Text>
           <RadioSelect
             options={['Single', 'Multiple']}
             defaultValue='multiple'

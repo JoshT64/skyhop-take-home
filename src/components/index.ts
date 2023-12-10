@@ -6,3 +6,4 @@ export * from './Container';
 export * from './Separator';
 export * from './FileUpload';
 export * from './FileLoader';
+export * from './StatusText';

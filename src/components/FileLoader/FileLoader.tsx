@@ -35,10 +35,14 @@ export const FileLoader = ({ file }: FileLoaderProps) => {
   }, [file.name]);
 
   return (
-    <div className='flex  pl-4 pt-4'>
-      <img src='/file-load-icon.png' alt='file icon' />
+    <div className='flex  pl-4 pt-2 items-center'>
+      <img
+        className='relative top-2'
+        src='/file-load-icon.png'
+        alt='file icon'
+      />
       <span className='pl-4'>
-        <Text className='flex justify-between font-light text-gray-400'>
+        <Text className='flex pt-0 justify-between font-light items-baseline text-gray-400'>
           {file.name.length < 70
             ? file.name
             : `${file.name.substring(0, 70)}...`}
