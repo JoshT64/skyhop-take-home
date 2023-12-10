@@ -36,7 +36,7 @@ export const DragAndDrop = ({ onFileNameChange }: DragAndDropProps) => {
             handleFileChange(event);
           input.click();
         }}
-        className='border cursor-pointer h-40 gap-3 w-[610px] flex-col mt-2 rounded-sm self-center flex justify-center items-center p-4 border-dashed border-gray-400 hover:bg-accent hover:text-accent-foreground '
+        className='border cursor-pointer h-40 w-[610px] flex-col mt-2 rounded-sm self-center flex justify-center items-center p-4 border-dashed border-gray-400 hover:bg-accent hover:text-accent-foreground '
       >
         <img src='/drag-drop-icon.png' />
         <Text className='font-light'>
