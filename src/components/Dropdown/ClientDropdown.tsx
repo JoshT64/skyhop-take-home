@@ -20,10 +20,8 @@ interface ClientDropdownProps {
 }
 
 export const ClientDropdown = ({ clients }: ClientDropdownProps) => {
-  console.log(clients);
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState('');
-  console.log(value);
   return (
     <div>
       <Popover open={open} onOpenChange={setOpen}>
