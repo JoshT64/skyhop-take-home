@@ -45,13 +45,13 @@ function App() {
           </div>
         </div>
         <div id='rightRow' className='pr-8 text-start place-self-auto'>
-          <Separator>
+          <Separator className='w-[290px]'>
             <Text className='pt-0'>
               Split schedule using social distancing?
             </Text>
             <RadioSelect options={['Yes', 'No']} defaultValue='yes' />
           </Separator>
-          <Separator>
+          <Separator className='w-[290px]'>
             <StatusText text={'Location Checking:'} isAvailable />
           </Separator>
           <ClientSelect />
