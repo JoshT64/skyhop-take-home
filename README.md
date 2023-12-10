@@ -1,4 +1,4 @@
-Visit skyhop-take-home.vercel.app for latest deploy!
+Visit [TakeHome](skyhop-take-home.vercel.app) for latest deploy!
 
 # Skyhop Take Home SPA
 
