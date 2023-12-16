@@ -28,7 +28,7 @@ export const ClientSelect = () => {
         {testingCenters.map((testingCenter) => {
           return (
             <li
-              className=' font-light pt-4 flex items-center gap-12 text-sm'
+              className=' font-light pt-4 flex justify-end items-center gap-12 text-sm'
               key={testingCenter.client}
             >
               {testingCenter.name}
