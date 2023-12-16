@@ -1,4 +1,6 @@
-Visit [Skyhop Take Home](skyhop-take-home.vercel.app) for latest deploy!
+Visit [Skyhop Take Home](https://skyhop-take-home.vercel.app) for latest deploy!
+
+- File upload allows click to open your file browser or drag & drop.
 
 # Skyhop Take Home SPA
 
@@ -11,3 +13,6 @@ Extra credit:
 - Submit this assignment via a github link with multiple commits.
 
 - Create a Demo link
+
+
+<img width="1469" alt="FinishedProject" src="https://github.com/JoshT64/skyhop-take-home/assets/80284931/ec7de371-5d45-407d-a599-3cae61d5c5c4">
